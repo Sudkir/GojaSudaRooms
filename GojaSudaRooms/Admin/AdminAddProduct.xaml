@@ -16,19 +16,19 @@
 
         <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Введите название товара:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox x:Name="txbName" TextChanged="txbName_TextChanged"/>
+            <TextBox x:Name="txbNameProduct" TextChanged="txbName_TextChanged"/>
             <TextBlock Text="Выбирете категорию товара:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <ComboBox x:Name="cmbFiltrationCategory" SelectedIndex="0" SelectionChanged="cmbFiltrationCategory_SelectionChanged"/>
             <TextBlock Text="Введите цену" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox x:Name="txbPrice" TextChanged="txbPrice_TextChanged"/>
             <TextBlock Text="Выбирете изображение:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button x:Name="btnView" Content="Обзор" Click="btnView_Click" Style="{StaticResource ButtonOne}"/>
+            <Button x:Name="btnView" Content="Обзор" Click="btnImageAdd_Click" Style="{StaticResource ButtonOne}"/>
             <TextBlock Text="Введите описание:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox x:Name="txbDescription" TextChanged="txbDescription_TextChanged"/>
             <TextBlock Text="Введите материал товара:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox x:Name="txbMaterial" TextChanged="txbMaterial_TextChanged"/>
         </StackPanel>
-
+       
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnCloseWindow" Content="Закрыть окно" Style="{StaticResource ButtonOne}" Click="btnCloseWindow_Click"/>
             <Button x:Name="btnSave" Content="Сохранить" Style="{StaticResource ButtonOne}" Click="btnSave_Click"/>

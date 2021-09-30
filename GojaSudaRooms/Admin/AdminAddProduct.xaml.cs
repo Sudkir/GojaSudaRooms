@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GojaSudaRooms.Helper;
+using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GojaSudaRooms.Admin
 {
@@ -19,6 +13,8 @@ namespace GojaSudaRooms.Admin
     /// </summary>
     public partial class AdminAddProduct : Window
     {
+        public static RoomInteriorsEntities DB = new RoomInteriorsEntities();
+        Image imgImageProduct = new Image();
         public AdminAddProduct()
         {
             InitializeComponent();
@@ -26,7 +22,6 @@ namespace GojaSudaRooms.Admin
 
         private void txbName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         private void cmbFiltrationCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -56,12 +51,27 @@ namespace GojaSudaRooms.Admin
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            var result = MessageBox.Show("", "", MessageBoxButton.YesNo);
+            Product prodAdd = new Product();
+            prodAdd.NameProduct = txbNameProduct.Text;
+            prodAdd.IdCategory = cmbFiltrationCategory.SelectedIndex + 1;
+            prodAdd.Price = Convert.ToDecimal(txbPrice.Text);
 
+            DB.Product.Add(prodAdd);
+            DB.SaveChanges();
+            MessageBox.Show("","",MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        private void btnView_Click(object sender, RoutedEventArgs e)
+        private void btnImageAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenFileDialog openFD = new OpenFileDialog();
+            if (openFD.ShowDialog() == true)
+            {
+                string FileName = openFD.FileName;
+                imgImageProduct.Source = new BitmapImage(new Uri(openFD.FileName));
+                //А поля то нету для ссылки на ресурс
+                string PathProduct = openFD.FileName;
+            }
         }
     }
 }

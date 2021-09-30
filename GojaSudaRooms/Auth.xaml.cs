@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GojaSudaRooms.Admin;
+using GojaSudaRooms.Helper;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using GojaSudaRooms.Helper;
 
 namespace GojaSudaRooms
 {
@@ -21,13 +12,15 @@ namespace GojaSudaRooms
     public partial class Auth : Page
     {
         public static RoomInteriorsEntities DB = new RoomInteriorsEntities();
+
+
         public Auth()
         {
             InitializeComponent();
-           
-            
+
+
         }
-       
+
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
@@ -36,8 +29,25 @@ namespace GojaSudaRooms
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            var userModel = DB.User.FirstOrDefault();
-
+            var userModel = DB.User.FirstOrDefault
+                (i => i.Login == txbLogin.Text && i.Password == psbPassword.Password);
+            if (psbPassword.Password == psbPasswordRepeat.Password)
+            {
+                if (userModel == null)
+                {
+                    MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK);
+                }
+                else if (userModel.IdRole == 1)
+                {
+                    AdminMain aM = new AdminMain();
+                    aM.Show();
+                    Application.Current.MainWindow.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Пароль не совпадает", "Ошибка", MessageBoxButton.OK);
+                }
+            }
 
         }
     }

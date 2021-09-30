@@ -22,21 +22,21 @@
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="Введите логин:                                 "/>
+            <TextBlock Margin="0,0,57,0" Text="Введите логин:"/>
             <TextBox x:Name="txbLogin"/>
         </StackPanel>
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="Введите пароль:                               "/>
+            <TextBlock Margin="0,0,50,0" Text="Введите пароль:"/>
             <PasswordBox x:Name="psbPassword"/>
         </StackPanel>
         <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="Повторите пароль:                           "/>
+            <TextBlock Margin="0,0,35,0" Text="Повторите пароль:"/>
             <PasswordBox x:Name="psbPasswordRepeat"/>
         </StackPanel>
         <StackPanel Grid.Row="4" 
