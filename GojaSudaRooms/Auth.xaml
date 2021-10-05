@@ -44,7 +44,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
             <Button x:Name="btnExit" Content="Выйти" Click="btnExit_Click" Style="{StaticResource ButtonOne}"/>
-            <Button x:Name="btnEnter" Content="Войти" Click="btnEnter_Click" Style="{StaticResource ButtonOne}"/>
+            <Button x:Name="btnEnter" Content="Войти" Click="btnEnter_Click1" Style="{StaticResource ButtonOne}"/>
         </StackPanel>
     </Grid>
 </Page>

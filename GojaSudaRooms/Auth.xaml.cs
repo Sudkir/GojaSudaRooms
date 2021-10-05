@@ -11,7 +11,7 @@ namespace GojaSudaRooms
     /// </summary>
     public partial class Auth : Page
     {
-        public static RoomInteriorsEntities DB = new RoomInteriorsEntities();
+        public static RoomInteriorsEntitiesLast DB = new RoomInteriorsEntitiesLast();
 
 
         public Auth()
@@ -49,6 +49,13 @@ namespace GojaSudaRooms
                 }
             }
 
+        }
+
+        private void btnEnter_Click1(object sender, RoutedEventArgs e)
+        {
+            AdminMain aM = new AdminMain();
+            aM.Show();
+            Application.Current.MainWindow.Close();
         }
     }
 }

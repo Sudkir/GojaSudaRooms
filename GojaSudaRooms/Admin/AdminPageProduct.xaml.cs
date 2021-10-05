@@ -12,7 +12,7 @@ namespace GojaSudaRooms.Admin
     public partial class AdminPageProduct : Page
     {
 
-        public static RoomInteriorsEntities DB = new RoomInteriorsEntities();
+        public static RoomInteriorsEntitiesLast DB = new RoomInteriorsEntitiesLast();
         // listы добавлены от
        
         List<Product> listProduct = new List<Product>();
@@ -64,9 +64,21 @@ namespace GojaSudaRooms.Admin
         public AdminPageProduct()
         {
             InitializeComponent();
-            LvProduct.ItemsSource = listProduct;
+
+            
             listProduct = DB.Product.ToList();
-       
+            LvProduct.ItemsSource = listProduct;
+
+            /*
+             * ServiceReference1.ImojWCFServiceClient client = new ServiceReference1.ImojWCFServiceClient();
+                listView1.Items.Clear();
+                var userList = client.getUsers();
+                listView1.ItemsSource = userList;
+             * 
+             * 
+             * */
+
+
 
             var category = DB.Category.ToList();
             foreach (var i in category)

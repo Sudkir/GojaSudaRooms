@@ -42,16 +42,16 @@
                             <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding photoProduct}" HorizontalAlignment="Stretch"/>
+                        <Image Source="{Binding PhotoProduct}" HorizontalAlignment="Stretch"/>
 
                         <StackPanel Grid.Column="1" Orientation="Vertical">
-                            <TextBlock x:Name="tbckNameProduct" Text="{Binding nameProduct}"/>
+                            <TextBlock x:Name="tbckNameProduct" Text="{Binding NameProduct}"/>
                             <Line X1="350" Y1="1" Stroke="#00ADB5"/>
-                            <TextBlock x:Name="tbckDescription" Text="{Binding description}" FontSize="14"/>
+                            <TextBlock x:Name="tbckDescription" Text="{Binding Description}" FontSize="14"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock x:Name="tbckPrice" Text="{Binding price}" FontSize="14"/>
+                            <TextBlock x:Name="tbckPrice" Text="{Binding Price}" FontSize="14"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
