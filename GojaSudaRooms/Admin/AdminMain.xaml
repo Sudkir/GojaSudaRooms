@@ -25,6 +25,6 @@
             <TextBlock Text="Room interior" HorizontalAlignment="Center"/>
             <Image Source="/Resources/logo.png" Width="50" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <Frame Grid.Column="1" x:Name="frmMainAdmin" Margin="0 0 30 0"/>
+        <Frame Grid.Column="1" x:Name="frmMainAdmin" Margin="0 0 30 0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

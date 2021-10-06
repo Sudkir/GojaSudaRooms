@@ -31,6 +31,7 @@ namespace GojaSudaRooms.Admin
         //Сортировка
         void Filtr()
         {
+            // фильтрация по Алфавиту и по категории
             
             var selectSort = cmbSortingPrice.SelectedIndex;
             switch (selectSort)
@@ -54,32 +55,22 @@ namespace GojaSudaRooms.Admin
             
             var selectFiltr = cmbFiltrationCategory.SelectedIndex;
             if (selectFiltr != 0)
+            {
                 listProduct = listProduct.Where(i => i.IdCategory == selectFiltr).ToList();
+            }
 
-  
             listProduct = listProduct.Skip(10 * numPage).Take(10).ToList();
-
             LvProduct.ItemsSource = listProduct;
         }
         public AdminPageProduct()
         {
             InitializeComponent();
-
-            
+            InitAdmin();
+        }
+        public void InitAdmin()
+        {
             listProduct = DB.Product.ToList();
             LvProduct.ItemsSource = listProduct;
-
-            /*
-             * ServiceReference1.ImojWCFServiceClient client = new ServiceReference1.ImojWCFServiceClient();
-                listView1.Items.Clear();
-                var userList = client.getUsers();
-                listView1.ItemsSource = userList;
-             * 
-             * 
-             * */
-
-
-
             var category = DB.Category.ToList();
             foreach (var i in category)
             {
@@ -92,25 +83,37 @@ namespace GojaSudaRooms.Admin
 
             cmbSortingPrice.ItemsSource = listSort;
             cmbSortingPrice.SelectedIndex = 0;
-
-            
         }
 
 
         private void btnBackFrm_Click(object sender, RoutedEventArgs e)
         {
-                Content = null;
+            Content = null;
         }
 
         private void txbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // Поисковая строка
+            if (txbSearch.Text == "")
+            {
+                listProduct = DB.Product.ToList();
+                LvProduct.ItemsSource = listProduct;
+            }
             listProduct = listProduct.Where(i => i.NameProduct.ToLower()
             .Contains(txbSearch.Text.ToLower())).ToList();
+            LvProduct.ItemsSource = listProduct;
+
         }
 
         private void cmbFiltrationCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Filtr();
+            // фильтр категории
+            if (cmbFiltrationCategory.SelectedIndex == 0)
+            {
+                LvProduct.ItemsSource = DB.Product.ToList();
+            }
+                Filtr();
+  
         }
 
         private void cmbSortingPrice_SelectionChanged(object sender, SelectionChangedEventArgs e)
