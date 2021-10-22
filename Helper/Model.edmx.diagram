@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="392f66c6ccf647198937769d87fdf3c2" Name="Diagram1">
+        <EntityTypeShape EntityType="RoomInteriorsModel.Basket" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.Category" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.Order" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.Role" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.User" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="RoomInteriorsModel.FK_Basket_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="RoomInteriorsModel.FK_Basket_User" ManuallyRouted="false" />
+        <AssociationConnector Association="RoomInteriorsModel.FK_Order_Basket" ManuallyRouted="false" />
+        <AssociationConnector Association="RoomInteriorsModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="RoomInteriorsModel.FK_User_Role" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.BasketProd" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.UserOrderView" Width="1.5" PointX="7.875" PointY="7.375" />
+        <EntityTypeShape EntityType="RoomInteriorsModel.OrderManager" Width="1.5" PointX="10.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

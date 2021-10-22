@@ -1,0 +1,41 @@
+﻿<Window x:Class="GojaSudaRooms.Admin.AdminEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GojaSudaRooms.Admin"
+        mc:Ignorable="d"
+         Title="Edit Product" MinHeight="500" MinWidth="400" MaxWidth="400" Width="400" Height="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Введите название товара:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox x:Name="txbNameProduct" />
+            <TextBlock Text="Выбирете категорию товара:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <ComboBox x:Name="cmbFiltrationCategory" SelectedIndex="0" />
+            <TextBlock Text="Введите цену" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox x:Name="txbPrice" />
+            <TextBlock Text="Выбирете изображение:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button x:Name="btnView" Content="Обзор" Click="btnImageAdd_Click" Style="{StaticResource ButtonOne}" />
+            <TextBlock Text="Введите описание:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox x:Name="txbDescription" />
+            <TextBlock Text="Введите материал товара:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox x:Name="txbMaterial" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnCloseWindow" Content="Закрыть окно" Style="{StaticResource ButtonOne}" Click="btnCloseWindow_Click" />
+            <Button x:Name="btnSave" Content="Сохранить" Style="{StaticResource ButtonOne}" Click="btnSave_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom">
+            <TextBlock Text="Room Interior" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+            <Image Source="..\Resources\logo.png" Width="50" />
+        </StackPanel>
+    </Grid>
+</Window>

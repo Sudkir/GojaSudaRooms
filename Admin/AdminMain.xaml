@@ -1,0 +1,30 @@
+﻿<Window x:Class="GojaSudaRooms.Admin.AdminMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GojaSudaRooms.Admin"
+        mc:Ignorable="d"
+        Title="AdminMain" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="600" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    Orientation="Vertical"
+                    Background="#00ADB5"
+                    VerticalAlignment="Center">
+            <Button x:Name="btnListProduct" Content="Товары" Click="btnListProduct_Click" Style="{StaticResource ButtonOne}" />
+            <Button x:Name="btnListUser" Content="Пользователи" Click="btnListUser_Click" Style="{StaticResource ButtonOne}" />
+            <Button x:Name="btnListExitProfile" Content="Выйти из профиля" Click="btnListExitProfile_Click" Style="{StaticResource ButtonOne}" />
+            <Button x:Name="btnListCloseApp" Content="Закрыть приложение" Click="btnListCloseApp_Click" Style="{StaticResource ButtonOne}" />
+        </StackPanel>
+        <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom">
+            <TextBlock Text="Room interior" HorizontalAlignment="Center" />
+            <Image Source="/Resources/logo.png" Width="50" VerticalAlignment="Bottom" />
+        </StackPanel>
+        <Frame Grid.Column="1" x:Name="frmMainAdmin" Margin="0 0 30 0" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>

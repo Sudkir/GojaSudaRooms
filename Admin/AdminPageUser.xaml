@@ -1,0 +1,35 @@
+﻿<Page x:Class="GojaSudaRooms.Admin.AdminPageUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:GojaSudaRooms.Admin"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminPageUser" Background="#EEEEEE">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="330" />
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button x:Name="btnBackFrm" Content="&lt;" Style="{StaticResource ButtonTwo}" Click="btnBackFrm_Click" />
+        </WrapPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" />
+
+        <ListView Grid.Row="1" x:Name="LvUser" SelectionChanged="LvUser_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Patronymic}" />
+                    <GridViewColumn Header="Номер телефона" Width="100" DisplayMemberBinding="{Binding Phone}" />
+                    <GridViewColumn Header="Электронная почта" Width="150" DisplayMemberBinding="{Binding Email}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>
